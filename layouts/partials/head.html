@@ -1,0 +1,25 @@
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{{- with .Title | default .Site.Title }}
+  <title>{{ . }}</title>
+  <meta property="og:title" content="{{ . }}">
+{{- end }}
+{{- with .Description | default .Params.subtitle | default .Summary }}
+  <meta name="description" content="{{ . }}">
+  <meta property="og:description" content="{{ . }}">
+{{ else }}
+  <meta name="description" content="mlrd is a DynamoDB-compatible API on MySQL.">
+{{- end }}
+<link rel="icon" href="/img/mlrd-favicon.svg?v1">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:url" content="{{ .Permalink | absLangURL }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="mlrd.tech">
+<link rel="canonical" href="{{ .Permalink | absLangURL }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="/mlrd-styles-v1.css" rel="stylesheet">
+</head>

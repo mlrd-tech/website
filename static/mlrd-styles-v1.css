@@ -1,0 +1,187 @@
+:root {
+  --prussian-blue: hsla(212, 100%, 7%, 1);
+  --smart-blue: hsla(217, 39%, 46%, 1);
+  --baby-blue-ice: #87B7E7; /*hsla(210, 67%, 72%, 1);*/
+  --ebony: hsla(80, 5%, 35%, 1);
+  --bright-fern: hsla(111, 62%, 46%, 1);
+  --soft-white: #f0f0f0;
+  --snow-shadow: #dfdfdf;
+  --terminal-black: #151515;
+
+  color-scheme: light dark;
+  --lt-bg: var(--soft-white);
+  --lt-txt: var(--terminal-black);
+  --dk-bg:var(--terminal-black);
+  --dk-txt: var(--soft-white);
+  --lt-menu-bg: var(--soft-white);
+  --lt-menu-txt: var(--terminal-black);
+  --dk-menu-bg: var(--terminal-black);
+  --dk-menu-txt: var(--soft-white);
+  --lt-link: blue;
+  --dk-link: var(--bright-fern);
+  --duck-feet: #ff8c42;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+h1 {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+h2 {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+a {color:light-dark(var(--lt-link),var(--dk-link));}
+a:visited{color:light-dark(var(--lt-link),var(--dk-link));}
+ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+li { margin-bottom: 0.75rem; font-size: 1.1rem; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: light-dark(var(--lt-bg), var(--dk-bg));
+  color: light-dark(var(--lt-text), var(--dk-text));
+  line-height: 1.5;
+}
+
+div.term {
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+div.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+nav#menu {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1.2em;
+  border-radius: 1em;
+  box-shadow: 0 4px 12px light-dark(rgba(0, 0, 0, 0.40), grey);
+  margin: 1rem 0;
+  padding: 0 1em;
+  background: light-dark(var(--lt-menu-bg), var(--dk-menu-bg));
+  max-width: fit-content;
+}
+
+nav#menu>a {
+  font-weight: bold;
+  text-decoration: none;
+}
+nav#menu>a:hover {
+  text-decoration:underline;
+}
+
+img#logo { display: flex; }
+
+main { margin: 0 auto; }
+
+section {
+  margin: 2rem auto 0;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 2em;
+  line-height: 1.5em;
+}
+
+section.hero { display: flex; flex-direction: row; gap: 0.5em; font-weight: bold;}
+.col { flex-basis: 100%; flex: 1; }
+div.benefits li { font-size: inherit; }
+div.benefits li::marker { content: "~ "; font-size:0.9em; }
+
+section.bylines {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 2em;
+}
+
+.cta {
+  margin-top: 2em;
+  padding: 2rem;
+  text-align: center;
+}
+.cta-email {
+  display: inline-block;
+  background-color: var(--duck-feet);
+  color: var(--terminal-black);
+  padding: 1rem 2.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 1em;
+  border: 2px solid orange;
+  margin: 1em auto;
+  box-shadow: 0 4px 12px light-dark(rgba(0, 0, 0, 0.40), grey);
+}
+
+.cta-email:hover {
+  background-color: #ff9d5c;
+  border-color: #ff9d5c;
+  box-shadow: 0 2px 2px light-dark(rgba(0, 0, 0, 0.20), grey);
+}
+
+footer {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1em;
+  max-width: fit-content;
+  color: light-dark(var(--lt-txt), var(--dk-txt));
+  margin-top: 4rem;
+}
+footer>a {text-decoration:none;}
+
+div.legal {
+  margin: 0 auto;
+  max-width: 700px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: justify;
+}
+
+sup { font-size: 0.5em; }
+sup a {text-decoration:none; }
+.footnotes {
+  margin: 2em 1em;
+  border: none;
+}
+.footnotes > hr {display: none}
+.footnotes li {font-size:0.8em}
+
+table {
+  font-size: 2em;
+  text-align: left;
+  width:90%;
+  margin-top: 1em;
+}
+th, tr {text-align: left}
+
+.money-table > table { }
+.define-hostage {
+  font-size: 1.5em;
+  margin: 1em auto;
+  border-left: 1px solid grey;
+  padding-left: 1em;
+}
+
+.legal table { font-size: revert }
+.legal p { margin: 1em 0; }
+.legal h1, .legal h2, .legal h3 { margin: 1.2em 0 0 0; }
+.legal ol, .legal ul { margin-left: 2em; }
+.legal td {
+  font-size: revert;
+  text-align: left;
+  vertical-align: top;
+  padding: 0.5em 0;
+}
+
+

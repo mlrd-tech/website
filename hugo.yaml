@@ -1,0 +1,10 @@
+languageCode: en-us
+params:
+  title: mlrd ~ DynamoDB-Compatible API on MySQL
+  summary: ""
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+

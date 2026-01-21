@@ -1,0 +1,33 @@
+baseURL: "/docs"
+languageCode: 'en-us'
+title: "mlrd Docs"
+theme: "hugo-book"
+
+publishDir: "../public/docs"
+
+ignoreLogs:
+  - "warning-goldmark-raw-html"
+
+disableKinds:
+  - taxonomy
+  - term
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    codeFences: true
+    noClasses: true
+    style: github
+  tableOfContents:
+    endLevel: 4
+    ordered: false
+    startLevel: 2
+
+params:
+  currentVersion: "v0-beta"
+  BookTheme: "auto"
+  BookSection: "*"
+  BookLogo: "img/mlrd-logo-v0.png"
+  BookComments: false

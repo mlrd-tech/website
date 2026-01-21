@@ -1,0 +1,3 @@
+{{- $path := .Get 0 -}}
+{{- $version := site.Params.currentVersion -}}
+{{- ref . (printf "%s/%s" $version $path) -}}
