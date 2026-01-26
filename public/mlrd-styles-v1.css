@@ -4,6 +4,15 @@
   --baby-blue-ice: #87B7E7; /*hsla(210, 67%, 72%, 1);*/
   --ebony: hsla(80, 5%, 35%, 1);
   --bright-fern: hsla(111, 62%, 46%, 1);
+
+  /*
+  --prussian-blue: #001226ff;
+  --smart-blue: #476ba3ff;
+  --baby-blue-ice: #87b7e7ff;
+  --ebony: #5b5e55ff;
+  --bright-fern: #42bd2dff;
+  */
+
   --soft-white: #f0f0f0;
   --snow-shadow: #dfdfdf;
   --terminal-black: #151515;
@@ -50,6 +59,7 @@ body {
 div.term {
   margin: 0 auto;
   max-width: 1024px;
+  padding: 0 1rem;
 }
 
 div.center {
@@ -61,7 +71,7 @@ div.center {
 }
 
 nav#menu {
-  height: 64px;
+  min-height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -69,9 +79,10 @@ nav#menu {
   border-radius: 1em;
   box-shadow: 0 4px 12px light-dark(rgba(0, 0, 0, 0.40), grey);
   margin: 1rem 0;
-  padding: 0 1em;
+  padding: 0.75em 1em;
   background: light-dark(var(--lt-menu-bg), var(--dk-menu-bg));
   max-width: fit-content;
+  flex-wrap: wrap;
 }
 
 nav#menu>a {
@@ -174,14 +185,104 @@ th, tr {text-align: left}
 }
 
 .legal table { font-size: revert }
-.legal p { margin: 1em 0; }
-.legal h1, .legal h2, .legal h3 { margin: 1.2em 0 0 0; }
-.legal ol, .legal ul { margin-left: 2em; }
+.legal p { margin: 1em 0; text-align: left; }
+.legal h1, .legal h2, .legal h3 { margin: 1.2em 0 0 0; text-align: left;}
+.legal ol, .legal ul { margin-left: 2em; text-align: left; }
 .legal td {
   font-size: revert;
   text-align: left;
   vertical-align: top;
   padding: 0.5em 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+  }
+
+  div.term {
+    padding: 0 0.75rem;
+  }
+
+  div.center {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+
+  nav#menu {
+    width: 100%;
+    max-width: 100%;
+    gap: 0.8em;
+    padding: 0.75em;
+    justify-content: center;
+  }
+
+  nav#menu > a {
+    font-size: 0.9rem;
+  }
+
+  section {
+    font-size: 1.25em;
+    margin: 1.5rem auto 0;
+  }
+
+  section.hero {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  section.bylines {
+    font-size: 1.25em;
+  }
+
+  .cta {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .cta-email {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  table {
+    font-size: 1em;
+    width: 100%;
+  }
+
+  .define-hostage {
+    font-size: 1em;
+  }
+
+  footer {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75em;
+    padding: 0 0.5rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  section {
+    font-size: 1.5em;
+  }
+
+  section.bylines {
+    font-size: 1.5em;
+  }
+
+  table {
+    font-size: 1.5em;
+  }
+
+  .define-hostage {
+    font-size: 1.25em;
+  }
 }
 
 
