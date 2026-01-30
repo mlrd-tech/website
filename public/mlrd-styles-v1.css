@@ -33,14 +33,16 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-h1 {
+h1, h2, h3 {
   font-family: 'JetBrains Mono', 'Courier New', monospace;
+  line-height: 1em;
+}
+h1 {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.25rem;
 }
 h2 {
-  font-family: 'JetBrains Mono', 'Courier New', monospace;
   font-size: 1.75rem;
   margin-bottom: 1rem;
 }

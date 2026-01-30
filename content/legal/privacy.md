@@ -4,7 +4,7 @@ layout: legal
 ---
 # `mlrd` Privacy Policy
 
-*Effective Date: January 19, 2026*
+*Effective Date: January 30, 2026*
 
 This Privacy Policy describes the privacy practices of 17468296 Canada, Inc., a corporation registered under the laws of Canada, doing business as mlrd.tech ("mlrd.tech," "we," "us," or "our") and how we collect, use, and disclose information in connection with our software product (mlrd), websites, and APIs (collectively, the "Services"). We treat all personal information covered by this Privacy Policy as pertaining to individuals acting as business representatives, and not in their individual or household capacity.
 
@@ -24,16 +24,16 @@ App data (such as database items, rows, or records) that `mlrd` receives from yo
 
 On startup, mlrd must contact our API (currently, `https://api.mlrd.app`) to verify the validity of your licenses. During this verification process, the following information is transmitted:
 
-* **API Key:** A unique identifier assigned to your account.  
-* **Table License Allocation ID (“Alloc ID”)**: The alloc ID identifies the license to which the table is being applied.  
-* **mlrd Version**: The version of the program being run.  
-* **Table Reference**: The table alias if you define one, else the real table name, in that order. If you wish to keep your real table names private, be sure to define a table alias in each table config file.
+* **API Key:** A unique identifier assigned to your account
+* **License Key**: The license key for the table(s)
+* **mlrd Version**: The version of the program being run
+* **Table Names**: Your DynamoDB table names
 
-This license verification data is necessary to provide the Services and enforce our licensing terms. Except for table references, we already know your API key, alloc IDs, and mlrd version because we generated them for you.
+This license verification data is necessary to provide the Services and enforce our licensing terms. Except for table names, we already know your API key, license key, and mlrd version because we generated them for you.
 
 ## **2.2 Anonymized Usage Statistics (“Stats”)**
 
-mlrd may collect and send Stats to our API (currently, `https://stats.mlrd.app`)) to help us improve our products and services.
+mlrd may collect and send Stats to our API (currently, `https://stats.mlrd.app`) to help us improve our products and services.
 
 * **Free Trial License:** If you elect to use a free trial license, Stats are mandatory as a condition of the free trial Terms of Service. This means mlrd might stop running (exit) if it cannot successfully send Stats.  
 * **Paid License Users:** If you use a paid license, Stats are explicitly and only opt-in, which you can enable (opt in) or disable (opt out) any time through the customer portal (https://mlrd.app).
@@ -72,6 +72,7 @@ When you or an instance of mlrd running locally on your servers contacts one of 
 Across all of our Services, for all accounts we record a unified audit log of every change and certain (read-only) accesses. Audit log events include:
 
 * Timestamp (when the event occurred)  
+* Source IP address of the request
 * User ID who made the change or access  
 * Org ID the user was acting within (if any)  
 * The type of change or access  
@@ -86,7 +87,7 @@ We use the information we collect for the following purposes:
 | Information&nbsp;Collected | Purpose and Usage |
 | ---- | ---- |
 | License&nbsp;Verification&nbsp;Data&nbsp;&nbsp; | Verify that licenses are valid and mlrd is allowed to run. Strictly necessary because licenses are renewed monthly, and without a robust license verification process, it’s possible to use mlrd without limitations, which would make doing business and providing the Services infeasible. |
-| Stats | Improve mlrd and the Services for customers. Since mlrd is distributed binary, not a SaaS or hosted product, Stats are important to help us provide the most value to customers by seeing (anonymously) how mlrd is and isn’t used. We analyze Stats to answer questions like “Are workloads read-heavy, write-heavy, or mixed?”, and “Is mlrd memory consumption reasonable and stable?” |
+| Stats | Improve mlrd and the Services for customers. Since mlrd is distributed binary, not a SaaS or hosted product, Stats are important to help us provide the most value to customers by seeing (anonymously) how mlrd is and isn't used. We analyze Stats to answer questions like “Are workloads read-heavy, write-heavy, or mixed?”, and “Is mlrd memory consumption reasonable and stable?” |
 | Customer Portal and Websites | Provide, maintain, and improve our Services. Standard information and usage necessary for websites and customer portals, also to communicate with you regarding your account, license, and support. For example, our customer portal uses cookies to store authenticated session data. User credentials and authentication is handled by a third-party authentication service. Other than your email address, which is not secret or sensitive data, mlrd.tech never stores or processes your credentials. Even if authentication appears to originate from one of our domains (i.e. branded), behind the scenes it’s securely processed by a third party. We use web analytics to track website usage, referrals, demographics, conversions, and click-through rates. We use this data to answer questions like “Are we providing a product that people want to buy?”, and “Are they actually buying it?” |
 | Billing and Payment Information | Securely pass on to our merchant of record (“MoR”). mlrd.tech stores billing information, but we never store or process your payment information. This is not our business, so we pay an MoR to handle this. When you provide us payment information, we securely pass it to the MoR. Even if payment appears to originate from one of our domains (i.e. branded), behind the scenes payment information is always and only handled by our MoR. |
 | API Access | Analyze access to our systems for security and abuse prevention. We use this data to answer questions like “Is a bad actor attempting to DoS the API?”, and “Is there suspicious activity from places where we have no customers?” |
