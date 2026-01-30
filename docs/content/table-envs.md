@@ -21,14 +21,14 @@ So most `mlrd` table licenses give you non-production tables for free.
 
 ## Common Table Name
 
-The first table name serves as the _common table name_ (CTM): the name that all environments have in common.
-For example, if your table is `books_staging` in staging and `books` in production, the CTM is `books`.
-The CTM counts as 1 environment and is usually the production table name.
+The first table name serves as the _common table name_ (CMT): the name that all environments have in common.
+For example, if your table is `books_staging` in staging and `books` in production, the CMT is `books`.
+The CMT counts as 1 environment and is usually the production table name.
 
 ## Matching
 
-For each license, all table names for all envs must contain the CTM (case-insensitive) and not be a duplicate.
-For example, if the CTM is `Books`, then:
+For each license, all table names for all envs must contain the CMT (case-insensitive) and not be a duplicate.
+For example, if the CMT is `Books`, then:
 
 <table>
 <tr>
@@ -54,5 +54,5 @@ If `Books` becomes `Albums`, you can manually edit the table allocation to chang
 
 ## Auto-Match and Assign
 
-If `mlrd` uses a table that does not exist in any env, the table will be automatically added to the env if it matches the CTM and there's a free env.
+If `mlrd` uses a table that does not exist in any env, the table will be automatically added to the env if it matches the CMT and there's a free env.
 If not, the table will be disabled (`mlrd` won't serve requests to the table).
