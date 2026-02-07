@@ -6,7 +6,7 @@ weight: 80
 
 A table runs in a mode determined by its [table config]({{< vref "config/table" >}}):
 
-|Table&nbsp;Mode|Table Config|DynamoDB Access|SQL Store Access|Source of Truth|
+|Table&nbsp;Mode|Table&nbsp;Config|DynamoDB Access|SQL Store Access|Source&nbsp;of&nbsp;Truth|
 |---------------|------------|---------------|----------------|---------------|
 |SQL        |`ddb`<br>`mysql`| | ✅| SQL store|
 |Migration  |`ddb`<br>`migration`<br>`mysql`| ✅| ✅ | Depends on migration step|

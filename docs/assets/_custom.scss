@@ -5,3 +5,140 @@
   border-radius: 5px;
   padding: 0.4em;
 }
+
+:root {
+  --bg: #f0f0f0;
+  --blue: #4a90e2;
+  --hl: #abf7a8; 
+}
+
+.yaml-doc-container {
+  font-family: 'Monaco', 'Courier New', monospace;
+  max-width: 1400px;
+  line-height: 1em;
+  background: var(--bg);
+  font-size: 0.9rem;
+}
+
+.yaml-doc-container > .line:first-child > .yaml-section {
+  padding-top: 0.5rem;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.yaml-doc-container > .line:first-child > .doc-panel {
+  padding-top: 0.5rem;
+}
+
+.line {
+  display: grid;
+  grid-template-columns: minmax(400px, auto) 1fr;
+  align-items: start;
+}
+
+.yaml-section {
+  background: var(--bg);
+}
+
+.yaml-line {
+  display: flex;
+  line-height: 1.5em;
+  white-space: pre;
+}
+
+.line-number {
+  color: #999;
+  margin-right: 1rem;
+  user-select: none;
+  min-width: 2em;
+  text-align: right;
+}
+
+.setting {
+  color: #333;
+}
+
+.setting.required {
+  font-weight: bold;
+}
+
+.doc-panel {
+  height: 100%;
+  position: relative;
+  background: white;
+  padding-left: 0.5em;
+}
+
+.doc-section {
+  position: relative;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.doc-section:hover {
+  background: var(--bg);
+}
+
+.doc-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 500;
+  color: var(--blue);
+}
+
+.doc-header.expanded {
+  background: var(--bg);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.doc-toggle {
+  transition: transform 0.1s;
+}
+
+.doc-toggle.expanded {
+  transform: rotate(90deg);
+  margin-left: -4px;
+}
+
+.doc-line-ref {
+  color: #666;
+  background: #e0e0e0;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.doc-content {
+  display: none;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0 1rem 0.5rem 0.5rem;
+  color: #555;
+  line-height: 1.25;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background: var(--bg);
+  position: absolute;
+}
+
+.doc-content.expanded {
+  display: block;
+  padding-top: 1rem;
+  border-bottom: 1px solid var(--blue);
+  border-left: 1px solid var(--blue);
+  margin-bottom: 1rem;
+}
+
+.doc-text p { margin: 0 0 1rem 0; }
+.doc-text > p:last-child { margin-bottom: 0 }
+.doc-text > ul { margin-top: -0.5rem; }
+
+.doc-nested {
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  border-left: 2px solid #90c4e8;
+}
